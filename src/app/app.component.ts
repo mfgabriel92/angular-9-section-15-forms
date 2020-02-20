@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  onSubmitClick(form: NgForm) {
-    console.log(form);
+  @ViewChild('f') form: NgForm;
+
+  onSubmitClick(): void {
+    console.log(this.form);
   }
 }
