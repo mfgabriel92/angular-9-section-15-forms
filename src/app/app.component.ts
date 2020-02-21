@@ -8,6 +8,13 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('f') form: NgForm;
+  user: {
+    username: string;
+    email: string;
+    secret: string;
+    answer: string;
+    gender: string;
+  };
 
   onSuggestedUsernameClick() {
     this.form.form.patchValue({
@@ -16,6 +23,6 @@ export class AppComponent {
   }
 
   onSubmitClick(): void {
-    console.log(this.form);
+    this.user = this.form.value;
   }
 }
