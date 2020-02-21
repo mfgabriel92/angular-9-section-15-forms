@@ -9,6 +9,12 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   @ViewChild('f') form: NgForm;
 
+  onSuggestedUsernameClick() {
+    this.form.form.patchValue({
+      username: 'Lorem'
+    });
+  }
+
   onSubmitClick(): void {
     console.log(this.form);
   }
